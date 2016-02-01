@@ -42,7 +42,7 @@
     },
     "vnetResourceGroup": {
       "type": "string",
-      "defaultValue": "CFDcluster"
+      "defaultValue": "CFDtransfer"
     },
     "vnetName": {
       "type": "string",
