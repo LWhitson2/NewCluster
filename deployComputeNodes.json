@@ -112,8 +112,8 @@
         "parameters": {
           "uniquePrefix": { "value": "[parameters('uniquePrefix')]" },
           "clusterName": { "value": "[concat(parameters('uniquePrefix'), padLeft(copyindex(), 2, '0'))]" },
-          "sourceImageURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDcluster', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhds/',parameters('blobName'))]" },
-          "baseVHDURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDcluster', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhd/')]" },
+          "sourceImageURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDtransfer', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhds/',parameters('blobName'))]" },
+          "baseVHDURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDtransfer', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhd/')]" },
           "instanceCountPerSA": { "value": "[parameters('instanceCountPerSA')]" },
           "vmSize": { "value": "[parameters('vmSize')]" },
           "OSType": { "value": "[parameters('OSType')]" },
