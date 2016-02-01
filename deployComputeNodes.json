@@ -4,19 +4,18 @@
   "parameters": {
     "uniquePrefix": {
       "type": "string",
-      "defaultValue": "nfs2"
+      "defaultValue": "cfd"
     },
     "numberOfSAs": {
       "type": "int",
       "defaultValue": 4
     },
     "instanceCountPerSA": {
-      "type": "int",
-      "defaultValue": 4
+      "type": "int"
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_A1",
+      "defaultValue": "Standard_A9",
       "allowedValues": [
         "Standard_A1",
         "Standard_A8",
@@ -39,14 +38,14 @@
     },
     "blobName": {
       "type": "string",
-      "defaultValue": "20150826185255-00853603622-centos71-rdma-os1.vhd"
+      "defaultValue": "CFDBase-osDisk.2cd0bebc-f1ba-492a-83ee-8728b4b094b3.vhd"
     },
     "vnetResourceGroup": {
       "type": "string"
     },
     "vnetName": {
       "type": "string",
-      "defaultValue": "nfs2vnet"
+      "defaultValue": "cfdvnet"
     },
     "subnetName": {
       "type": "string",
@@ -54,19 +53,19 @@
     },
     "templateLocation": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/grandparoach/NewCluster/master/"
+      "defaultValue": "https://raw.githubusercontent.com/kddean21/NewCluster/master/"
     },
     "location": {
       "type": "string",
-      "defaultValue": "West US"
+      "defaultValue": "North Central US"
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "sroach"
+      "defaultValue": "azureuser"
     },
     "masterHostName": {
       "type": "string",
-      "defaultValue": "transfernfs2vm"
+      "defaultValue": "transfercfdvm"
     },
     "hpcUserName": {
       "type": "string",
@@ -74,7 +73,7 @@
     },
     "finaldeployScriptURI": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/grandparoach/NewCluster/master/finaldeploy.sh"
+      "defaultValue": "https://raw.githubusercontent.com/kddean21/NewCluster/master/finaldeploy.sh"
     },
     "adminPassword": {
       "type": "securestring"
@@ -112,8 +111,8 @@
         "parameters": {
           "uniquePrefix": { "value": "[parameters('uniquePrefix')]" },
           "clusterName": { "value": "[concat(parameters('uniquePrefix'), padLeft(copyindex(), 2, '0'))]" },
-          "sourceImageURI": { "value": "[concat('https://',uniqueString(concat(resourceId(parameters('vnetResourceGroup')), parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhds/',parameters('blobName'))]" },
-          "baseVHDURI": { "value": "[concat('https://',uniqueString(concat(resourceId(parameters('vnetResourceGroup')), parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhd/')]" },
+          "sourceImageURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDcluster', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhds/',parameters('blobName'))]" },
+          "baseVHDURI": { "value": "[concat('https://',uniqueString(concat('/subscriptions/14f61ead-3b01-4c6d-81b2-c0da372b65ca/resourceGroups/CFDcluster', parameters('uniquePrefix'), copyIndex())), parameters('uniquePrefix'),'.blob.core.windows.net/vhd/')]" },
           "instanceCountPerSA": { "value": "[parameters('instanceCountPerSA')]" },
           "vmSize": { "value": "[parameters('vmSize')]" },
           "OSType": { "value": "[parameters('OSType')]" },
