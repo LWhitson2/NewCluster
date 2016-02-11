@@ -4,7 +4,8 @@ MASTER_HOSTNAME=$1
 
 # Shares
 SHARE_HOME=/share/home
-SHARE_DATA=/share/data
+# SHARE_DATA=/share/data
+SHARE_DATA=/mnt/resource/
 
 
 # Hpc User
