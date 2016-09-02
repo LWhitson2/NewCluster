@@ -50,7 +50,7 @@
     },
     "subnetName": {
       "type": "string",
-      "defaultValue": "subnet2"
+      "defaultValue": "subnet1"
     },
     "templateLocation": {
       "type": "string",
