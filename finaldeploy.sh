@@ -19,7 +19,7 @@ HPC_GID=7007
 #
 install_pkgs()
 {
-    pkgs="zlib zlib-devel bzip2 bzip2-devel bzip2-libs openssl openssl-devel openssl-libs gcc gcc-c++ nfs-utils rpcbind mdadm wget"
+    pkgs="zlib zlib-devel bzip2 bzip2-devel bzip2-libs openssl openssl-devel openssl-libs gcc gcc-c++ nfs-utils rpcbind mdadm wget libtool libxml2-devel boost-devel"
     yum -y install $pkgs
 }
 
@@ -76,9 +76,20 @@ setup_env()
     echo "export I_MPI_DYNAMIC_CONNECTION=0" >> /etc/profile.d/hpc.sh
 }
 
+setup_torque()
+{
+    cd $SHARE_DATA
+    cd torque-6.0.2-1469811694_d9a3483
+    ./configure
+    make
+    make install
+    /usr/local/sbin/pbs_mom    
+}
+
 install_pkgs
 setup_shares
 setup_hpc_user
 setup_env
+setup_torque
 
 
