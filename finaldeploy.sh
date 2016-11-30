@@ -83,6 +83,7 @@ setup_torque()
     ./configure
     make
     make install
+    cp /mnt/resource/torque/config /var/spool/torque/mom_priv/
     /usr/local/sbin/pbs_mom    
 }
 
