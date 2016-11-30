@@ -78,9 +78,9 @@ setup_env()
 
 setup_torque()
 {
-    sudo su
-    cd /mnt/resource/torque/torque-6.0.2-1469811694_d9a3483/
-    /mnt/resource/torque/torque-6.0.2-1469811694_d9a3483/configure
+    cp -rp /mnt/resource/torque/torque-6.0.2-1469811694_d9a3483 ~
+    cd ~/torque-6.0.2-1469811694_d9a3483
+    ./configure
     make
     make install
     /usr/local/sbin/pbs_mom    
@@ -90,6 +90,6 @@ install_pkgs
 setup_shares
 setup_hpc_user
 setup_env
-#setup_torque
+setup_torque
 
 
