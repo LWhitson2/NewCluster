@@ -79,7 +79,7 @@ setup_env()
 setup_torque()
 {
     cd $SHARE_DATA
-    cd torque-6.0.2-1469811694_d9a3483
+    cd torque/torque-6.0.2-1469811694_d9a3483
     ./configure
     make
     make install
