@@ -90,6 +90,6 @@ install_pkgs
 setup_shares
 setup_hpc_user
 setup_env
-setup_torque
+#setup_torque
 
 
