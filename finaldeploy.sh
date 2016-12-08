@@ -85,7 +85,7 @@ setup_torque()
     make install
     yes | cp /mnt/resource/torque/server_name  /var/spool/torque/
     cp /mnt/resource/torque/config /var/spool/torque/mom_priv/
-    /usr/local/sbin/pbs_mom    
+    # /usr/local/sbin/pbs_mom    
 }
 
 install_pkgs
