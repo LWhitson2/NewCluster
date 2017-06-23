@@ -74,7 +74,7 @@ setup_env()
     echo "export I_MPI_FABRICS=shm:dapl" >> /etc/profile.d/hpc.sh
     echo "export I_MPI_DAPL_PROVIDER=ofa-v2-ib0" >> /etc/profile.d/hpc.sh
     echo "export I_MPI_DYNAMIC_CONNECTION=0" >> /etc/profile.d/hpc.sh
-    echo "export I_MPI_STATS=20" >> /etc/profile.d/hpc.sh
+    #echo "export I_MPI_STATS=20" >> /etc/profile.d/hpc.sh
 }
 
 setup_torque()
